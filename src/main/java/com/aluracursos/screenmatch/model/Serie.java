@@ -20,7 +20,7 @@ public class Serie {
     private Categoria genero;
     private String actores;
     private String sinopsis;
-    @OneToMany(mappedBy = "serie")
+    @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Episodio> episodios;
 
     public Serie(){}
@@ -114,8 +114,9 @@ public class Serie {
                 ", titulo= '" + titulo + '\'' +
                 ", totalTemporadas= " + totalTemporadas + '\'' +
                 ", evaluacion= " + evaluacion + '\'' +
-                ", poster ='" + poster + '\'' +
-                ", actores ='" + actores + '\'' +
-                ", sinopsis ='" + sinopsis + '\'';
+                ", poster= '" + poster + '\'' +
+                ", actores= '" + actores + '\'' +
+                ", sinopsis= '" + sinopsis + '\''+
+                ", episodios= '" + episodios + '\'';
     }
 }
